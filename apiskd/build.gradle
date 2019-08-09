@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+//Artlite libraries
+repositories {
+    maven {
+        url "https://dl.bintray.com/darknessbeast/sqlib-artlite"
+    }
+    maven {
+        url "https://dl.bintray.com/darknessbeast/adapteredrecyclerview-artlite"
+    }
+    maven {
+        url "https://dl.bintray.com/darknessbeast/baseproject-artlite"
+    }
+    maven {
+        url "https://dl.bintray.com/darknessbeast/beaconproject-artlite"
+    }
+    maven {
+        url "https://dl.bintray.com/darknessbeast/CameraView"
+    }
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api 'com.artlite:adapteredrecyclerview:5.0.0'
+    api 'com.artlite:baseproject:5.0.0'
+
+ //   testImplementation 'junit:junit:4.12'
+    // androidTestImplementation 'com.android.support.test:runner:1.0.2'
+   // androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
